@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "private": true,
+  "author": "Dmitry Menov (https://github.com/mdmen)",
+  "license": "MIT",
+  "scripts": {
+    "eslint": "eslint . --ext .ts",
+    "tslint": "tsc --noEmit",
+    "lint": "npm run eslint && npm run tslint",
+    "test": "jest",
+    "postinstall": "npx simple-git-hooks"
+  },
+  "lint-staged": {
+    "*.{ts,js,json,css}": [
+      "prettier --write"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npm run lint"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "@total-typescript/ts-reset": "^0.5.1",
+    "@types/jest": "^29.5.2",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "simple-git-hooks": "^2.7.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
